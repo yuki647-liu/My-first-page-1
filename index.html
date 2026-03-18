@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘思棋 | Vibecoding 零基础带你进入代码新纪元</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #F0F2F5;
+        }
+        
+        /* Morandi Gradient Background */
+        .morandi-bg {
+            background: linear-gradient(135deg, #E5E1DA 0%, #D9D9D9 25%, #C7C8CC 50%, #B4B4B8 75%, #E3E1D9 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Apple Style Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hover Effects */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+
+        /* Morandi Accent Colors */
+        .text-morandi-blue { color: #8EACCD; }
+        .bg-morandi-blue { background-color: #8EACCD; }
+        .text-morandi-green { color: #A7D397; }
+        .bg-morandi-pink { background-color: #D2E0FB; }
+        .bg-morandi-clay { background-color: #F9F7F7; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="morandi-bg text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center text-white font-bold text-xs">LQ</div>
+                <div class="text-xl font-bold tracking-tight">刘思棋 <span class="text-xs font-normal opacity-40 ml-1">VIBECODING</span></div>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:opacity-60 transition-opacity">首页</a>
+                <a href="#about" class="hover:opacity-60 transition-opacity">什么是 Vibecoding</a>
+                <a href="#guide" class="hover:opacity-60 transition-opacity">入门指南</a>
+                <a href="#contact" class="px-4 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-800 transition-colors">联系我</a>
+            </div>
+            <div class="md:hidden">
+                <i data-lucide="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 px-6">
+        <!-- Hero Section -->
+        <section id="home" class="max-w-7xl mx-auto py-20 flex flex-col items-center text-center">
+            <div class="mb-6 p-1 rounded-full bg-gradient-to-r from-blue-200 to-pink-200">
+                <img src="./头像.jpg" alt="刘思棋" class="w-32 h-32 rounded-full object-cover bg-white shadow-lg">
+            </div>
+            <div class="mb-4">
+                <span class="px-4 py-1.5 glass-card rounded-full text-sm font-medium text-slate-500 tracking-wider">Vibecoding 讲师</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+                刘思棋 <br> 
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400">带你玩转代码 Vibe</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-2xl mb-10 font-light">
+                我是刘思棋。在这里，我们不背语法，不钻牛角尖，只关注如何将你的创意转化为现实。零基础也能写出优雅的程序。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#guide" class="px-8 py-4 bg-slate-900 text-white rounded-2xl font-medium hover:shadow-xl transition-all hover:-translate-y-1">
+                    开启学习之旅
+                </a>
+                <a href="#about" class="px-8 py-4 glass-card rounded-2xl font-medium hover:bg-white/50 transition-all hover:-translate-y-1">
+                    了解更多
+                </a>
+            </div>
+        </section>
+
+        <!-- What is Vibecoding -->
+        <section id="about" class="max-w-5xl mx-auto py-20">
+            <div class="glass-card rounded-[3rem] p-10 md:p-16">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="flex-1">
+                        <h2 class="text-3xl font-bold mb-6">什么是 Vibecoding?</h2>
+                        <div class="space-y-4 text-slate-600 leading-relaxed">
+                            <p>Vibecoding 是一种全新的编程哲学。它强调的是<strong>直觉</strong>、<strong>反馈</strong>和<strong>快乐</strong>。</p>
+                            <p>传统的编程学习往往被繁琐的语法和复杂的逻辑所困扰。而 Vibecoding 结合了 AI 辅助和实时视觉反馈，让你在编写代码的过程中，能够实时“感受到”程序的变化。</p>
+                            <p>这就像是在弹琴或画画，你是在创作，而不是在填充表格。</p>
+                        </div>
+                    </div>
+                    <div class="flex-1 grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-blue-50/50 rounded-3xl text-center hover-scale">
+                            <i data-lucide="zap" class="w-8 h-8 mx-auto mb-3 text-blue-400"></i>
+                            <p class="font-medium">极速反馈</p>
+                        </div>
+                        <div class="p-6 bg-pink-50/50 rounded-3xl text-center hover-scale">
+                            <i data-lucide="heart" class="w-8 h-8 mx-auto mb-3 text-pink-400"></i>
+                            <p class="font-medium">直觉驱动</p>
+                        </div>
+                        <div class="p-6 bg-green-50/50 rounded-3xl text-center hover-scale">
+                            <i data-lucide="sparkles" class="w-8 h-8 mx-auto mb-3 text-green-400"></i>
+                            <p class="font-medium">创意优先</p>
+                        </div>
+                        <div class="p-6 bg-orange-50/50 rounded-3xl text-center hover-scale">
+                            <i data-lucide="cpu" class="w-8 h-8 mx-auto mb-3 text-orange-400"></i>
+                            <p class="font-medium">AI 协同</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="max-w-7xl mx-auto py-20">
+            <h2 class="text-4xl font-bold text-center mb-16">四步开启 Vibecoding</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center hover-scale">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold mb-6 shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-4">设定 Vibe</h3>
+                    <p class="text-slate-500 text-sm">明确你想要的感觉。是极简主义？还是赛博朋克？从感觉出发。</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center hover-scale">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold mb-6 shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-4">自然语言描述</h3>
+                    <p class="text-slate-500 text-sm">用你最熟悉的语言，向 AI 描述你的构思。无需担心专业术语。</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center hover-scale">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold mb-6 shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-4">即时调整</h3>
+                    <p class="text-slate-500 text-sm">观察代码的运行，通过细微的调整，让它逐渐符合你心中的 Vibe。</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="glass-card p-8 rounded-[2.5rem] flex flex-col items-center text-center hover-scale">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center font-bold mb-6 shadow-lg">4</div>
+                    <h3 class="text-xl font-bold mb-4">分享成果</h3>
+                    <p class="text-slate-500 text-sm">发布你的作品。Vibecoding 的魅力在于它的独特性和个人表达。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="max-w-3xl mx-auto py-32 text-center">
+            <div class="glass-card p-12 rounded-[3rem]">
+                <h2 class="text-3xl font-bold mb-6">准备好开始了吗？</h2>
+                <p class="text-slate-600 mb-10">
+                    如果你有任何关于 Vibecoding 的疑问，或者想和我一起探讨创意编程，随时欢迎联系我。
+                </p>
+                <form class="space-y-4">
+                    <input type="email" placeholder="你的邮箱地址" class="w-full px-6 py-4 rounded-2xl bg-white/50 border border-white/30 focus:outline-none focus:ring-2 focus:ring-slate-400 transition-all">
+                    <button class="w-full py-4 bg-slate-900 text-white rounded-2xl font-bold hover:shadow-xl transition-all">订阅课程通知</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 Vibecoding Instructor. Powered by Creativity & AI.</p>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some basic reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = "0";
+            section.style.transform = "translateY(20px)";
+            section.style.transition = "all 0.8s ease-out";
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
